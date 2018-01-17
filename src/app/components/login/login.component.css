@@ -1,0 +1,40 @@
+/*@import "../../../../node_modules/font-awesome/css/font-awesome.css"*/
+.container{
+   margin-top: 9%;
+   padding: 5%;
+   padding-top: 0;
+}
+
+.container > div > div+div{
+    border-radius: 15%;
+    background-color: white;
+    padding: 2%;
+}
+
+.container > div > div:first{
+    background-color: #ECEFF5;
+}
+
+input{
+   margin-top: 10%;
+}
+.form-group button{
+   float: right;
+   border-radius: 20px;
+}
+
+.form-group{
+   margin-top: 2rem;
+
+}
+
+form{
+   margin-top: 0px;
+   padding: 5%;
+}
+
+.logo-container{
+   background-color:  #247fcc;
+   color: white;
+   text-align: center;
+}

@@ -1,0 +1,66 @@
+.container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ECEFF5;
+}
+
+.container > div > div+div{
+    -webkit-animation: redBox 1s 1;
+    -moz-animation: redBox 1s 1;
+    animation: redBox 3s 1;
+    margin-top:5rem;
+    min-height: 500px;
+    background-color: white;
+    padding: 5%;
+}
+
+
+.fermer-modal{
+   position: absolute;
+   bottom: 2%;
+   right: 2%;
+}
+.container-visible{
+    display: block;
+    visibility: visible;
+}
+
+.container-hidden{
+    display: none;
+    visibility: hidden;
+}
+
+/* animation modal */
+@-webkit-keyframes redBox {
+    0% {
+      margin-top: 0rem;
+    }
+
+    100% {
+      margin-top: 5rem;
+    }
+}
+
+@-moz-keyframes redBox {
+    0% {
+      margin-top: 0rem;
+    }
+
+    100% {
+      margin-top: 5rem;
+    }
+}
+@keyframes 'redBox' {
+    0% {
+      margin-top: 0rem;
+    }
+
+    100% {
+      margin-top: 5rem;
+    }
+}

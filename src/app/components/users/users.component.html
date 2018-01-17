@@ -1,0 +1,60 @@
+<div class="container" >
+   <div class="row">
+         <div class="col-lg-1 ">
+
+         </div>
+         <div class="col-lg-10">
+             <div class="input-group sort">
+                <input type="text" class="form-control" placeholder="rechercher...">
+                <span class="input-group-btn">
+                      <button class="btn btn-secondary" type="button">Go!</button>
+                </span>
+             </div>
+             <table class="table table-bordered">
+                 <thead>
+                     <tr>
+                         <th>numéro</th>
+                        <th>
+                          Prenom
+                           <!-- <div ngbDropdown class="d-inline-block">
+                              <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
+                            </div> -->
+                        </th>
+                         <th>Nom</th>
+                         <th>téléphone</th>
+                         <th>adresse</th>
+                         <th>details</th>
+                         <th>chargé de clientèle</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <tr *ngFor="let client of clients">
+                         <th scope="row">{{ client.num }}</th>
+                         <td>{{ client.prenom }}</td>
+                         <td>{{ client.nom }}</td>
+                         <td>{{ client.telephone }}</td>
+                         <td>{{ client.adresse }}</td>
+                         <td>
+                               <button type="button" class="btn btn-primary" (click)="openModal(template)">details</button>
+
+                              <ng-template #template>
+                                  <div class="modal-header">
+                                         <h4 class="modal-title pull-left">Détails</h4>
+                                         <button type="button" class="close pull-right"
+                                                 aria-label="Close" (click)="modalRef.hide()"><span aria-hidden="true">&times;</span>
+                                        </button>
+                                  </div>
+                                  <div class="modal-body">
+                                     This is a modal.
+                                  </div>
+                              </ng-template>
+                         </td>
+                         <td>{{ client.charge }}</td>
+                     </tr>
+
+                 </tbody>
+             </table>
+         </div>
+   </div>
+</div>
+ <app-details [details]="detailsClient" *ngIf="detailsClient" (fermerModalEvent)="fermerModal($event)"></app-details>

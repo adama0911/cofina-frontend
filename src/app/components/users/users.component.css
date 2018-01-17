@@ -1,0 +1,16 @@
+.container{
+   margin-top: 10%;
+}
+.container > div > div+div{
+    background-color: white;
+    padding: 5%;
+}
+
+table{
+  margin-top: 5%;
+}
+
+.sort{
+     margin-top: 5%;
+     width: 40%;
+}
