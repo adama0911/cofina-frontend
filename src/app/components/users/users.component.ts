@@ -14,7 +14,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 export class UsersComponent implements OnInit {
   // clients list
   public clients       : any;
-  private clientsSave  : string:
+  private clientsSave  : string;
   // details of targeting client
   public detailsClient :any;
   // constructor ofthispublic modalRef: BsModalRef; class
