@@ -10,7 +10,77 @@ table{
   margin-top: 5%;
 }
 
+
 .sort{
-     margin-top: 5%;
-     width: 40%;
+     margin-top: 2%;
+     width: 60%;
 }
+
+tr{
+   line-height: 14px;
+   padding: 0px;
+}
+
+td,th{
+   padding-top: 0px;
+   padding-bottom: 0px;
+   line-height: 14px;
+   font-size: small;
+}
+
+td button,th button,td div,th div {
+  margin: 0px;
+}
+
+.modal-body .form-group{
+    margin-top:2%;
+}
+
+.bordure{
+   border: 2px solid black;
+   margin: 15px;
+}
+
+table h6{
+   background-color: crimson;
+   color: white;
+   margin-top: 15px;
+   margin-bottom: 15px;
+}
+
+table h5{
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.demande{
+   padding-top: 15px;
+   padding-left: 15px;
+   padding-bottom: 100px;
+   padding-right: 15px;
+}
+
+.imgTh img{
+   width: 10rem;
+   height: 100% !important;
+}
+.formTitle{
+    text-align: center;
+}
+.formE{
+    width: 10rem;
+}
+
+.typeCredit{
+      height: 10.5rem;
+  }
+
+.modal-footer button{
+   float: right;
+}
+
+.imprimer{
+     margin-right: 10%;
+}
+

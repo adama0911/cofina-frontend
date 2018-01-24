@@ -10,6 +10,7 @@ import { ClientsService } from './services/clients.service';
 import { DetailsComponent } from './components/details/details.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { NgPipesModule } from 'ngx-pipes'
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
   ],
   imports: [
     BrowserModule,
+    NgPipesModule,
     ModalModule.forRoot(),
     BsDropdownModule.forRoot()
   ],
