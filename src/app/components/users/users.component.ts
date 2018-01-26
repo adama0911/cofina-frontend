@@ -3,6 +3,7 @@ import { Component, OnInit ,TemplateRef } from '@angular/core';
 import { ClientsService }    from '../../services/clients.service'
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import {EssenceNg2PrintModule} from "essence-ng2-print";
 import * as $ from 'jquery';
 
 @Component({
@@ -13,15 +14,19 @@ import * as $ from 'jquery';
 
 export class UsersComponent implements OnInit {
   // clients list
-  public clients       : any;
-  private clientsSave  : string;
+  clients: any;
+  details: any
+  clientsSave: string;
   // details of targeting client
-  public detailsClient :any;
+  detailsClient :any;
   // constructor ofthispublic modalRef: BsModalRef; class
-  public motif:string;
-  public motif1:string;
-  public modalRef: BsModalRef;
+  motif: string;
+  motif1: string;
+  modalRef: BsModalRef;
  //constructor of this class
+
+  printCSS = ['https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'];
+
   constructor(public clientsService:ClientsService,private modalService: BsModalService){}
 
   ngOnInit() {
@@ -31,11 +36,12 @@ export class UsersComponent implements OnInit {
   getClients ():any{
        this.clients = this.clientsService.getclients();
   }
+
   //func that open modal
   public openModal(template: TemplateRef<any>) {
       this.modalRef = this.modalService.show(template,{class: 'modal-lg'}); // {3}
   }
-
+  
 //func that sort clients list by property
   sorted(event){
       let target: any = event.target;

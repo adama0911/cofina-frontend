@@ -1,213 +1,80 @@
 <div class="container" >
-   <div class="row">
-         <div class="col-lg-1 ">
-
-         </div>
-         <div class="col-lg-10">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="input-group input-group-sm sort">
-                       <input type="text" class="form-control input-sm" placeholder="rechercher..." (keyup)="changerMotif($event)">
-                       <span class="input-group-btn">
-                             <button class="btn btn-secondary btn-sm" type="button">Go!</button>
-                       </span>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                  
-                  <table class="table table-bordered">
-                      <thead>
-                          <tr>
+    <div class="row">
+          <div class="col-lg-1 ">
+ 
+          </div>
+          <div class="col-lg-10">
+             <div class="row">
+                 <div class="col-lg-12">
+                     <div class="input-group input-group-sm sort">
+                        <input type="text" class="form-control input-sm" placeholder="rechercher..." (keyup)="changerMotif($event)">
+                        <span class="input-group-btn">
+                              <button class="btn btn-secondary btn-sm" type="button">Go!</button>
+                        </span>
+                     </div>
+                 </div>
+             </div>
+             <div class="row">
+                 <div class="col-lg-12">
+                   
+                   <table class="table table-bordered">
+                       <thead>
+                           <tr>
+                               <th>
+                                 <div class="dropdown">
+                                   <button type="button" class="btn btn-danger btn-sm dropdown-toggle dropdown-toggle-split" (click)="sorted($event)" id="num"> Numéro</button>
+                                 </div>
+                               </th>
                               <th>
                                 <div class="dropdown">
-                                  <button type="button" class="btn btn-danger btn-sm dropdown-toggle dropdown-toggle-split" (click)="sorted($event)" id="num"> Numéro</button>
+                                  <button type="button" class="btn btn-danger btn-sm dropdown-toggle dropdown-toggle-split" (click)="sorted($event)" id="prenom">Prenom</button>
                                 </div>
                               </th>
-                             <th>
-                               <div class="dropdown">
-                                 <button type="button" class="btn btn-danger btn-sm dropdown-toggle dropdown-toggle-split" (click)="sorted($event)" id="prenom">Prenom</button>
-                               </div>
-                             </th>
-                              <th>
-                                <div class="dropdown">
-                                  <button type="button" class="btn btn-danger btn-sm dropdown-toggle dropdown-toggle-split" (click)="sorted($event)" id="nom">Nom</button>
-                                </div>
-                              </th>
-                              <th>
-                                <div class="dropdown">
-                                  <button type="button" class="btn btn-danger btn-sm dropdown-toggle dropdown-toggle-split" (click)="sorted($event)" id="telephone">Téléphone</button>
-                                </div>
-                              </th>
-                              <th>
-                                <div class="dropdown">
-                                  <button type="button" class="btn btn-danger btn-sm dropdown-toggle dropdown-toggle-split" (click)="sorted($event)" id="adresse">Adresse</button>
-                                </div>
-                              </th>
-                              <th>
-                                <div class="">
-                                  <button type="button" class="btn btn-danger btn-sm"  id="details">Détails</button>
-                                </div>
-                              </th>
-                              <th>
-                                <div class="dropdown">
-                                  <button type="button" class="btn btn-danger btn-sm dropdown-toggle dropdown-toggle-split" (click)="sorted($event)" id="charge">chargé de clientèle</button>
-                                </div>
-                              </th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr *ngFor="let client of clients | filterBy: ['num', 'nom','prenom','adresse','telephone','charge']: motif | orderBy: motif1  ">
-                              <th scope="row">{{ client.num }}</th>
-                              <td>{{ client.prenom }}</td>
-                              <td>{{ client.nom }}</td>
-                              <td>{{ client.telephone }}</td>
-                              <td>{{ client.adresse }}</td>
-                              <td>
-                                    <button type="button" class="btn btn-info btn-sm" (click)="openModal(template)">details</button>
-
-                                   <ng-template #template >
-                                     <div class="modal-header">
-                                         <button type="button" class="close pull-right"
-                                               aria-label="Close" (click)="modalRef.hide()"><span aria-hidden="true">&times;</span>
-                                         </button>
-                                     </div>
-                                        <div class="modal-body">
-                                           <table class="table table-bordered">
-                                               <thead>
-                                                   <tr>
-                                                      <th class="imgTh">
-                                                         <img src="../../assets/logo.png" alt="">
-                                                      </th>
-                                                      <th class="formTitle"><p>FORMULAIRE DEMANDE DE PRÊT PERSONNE MORALE.</p></th>
-                                                      <th class="formE">
-                                                           <tr><td colspan="2" >E01009V01</td></tr>
-                                                           <tr>
-                                                                <td>Date d’application</td>
-                                                                <td>Page :2  /  2</td>
-                                                           </tr>
-                                                      </th>
-                                                   </tr>
-
-                                               </thead>
-                                             <tbody>
-                                                <tr>
-                                                  <td colspan="3">
-                                                       <div class="row">
-                                                           <div class="col-lg-12 col-sm-12 col-md-12">
-                                                                <div class="row">
-                                                                    <h5 class="col-lg-12 col-sm-12 col-md-12">INFORMATIONS SUR LE DEMANDEUR</h5>
-                                                                </div>
-                                                                <div class="row bordure">
-                                                                      <div class="col-lg-12 col-sm-12 col-md-12">
-                                                                            <div class="row">
-                                                                                 <p>  Intitulé du compte....</p>
-                                                                            </div>
-
-                                                                           <div class="row">
-                                                                               <p>Numéro du compte	...</p>
-                                                                           </div>
-
-                                                                           <div class="row">
-                                                                             <p>Nom/Prénom du signataire...</p>
-                                                                           </div>
-
-                                                                           <div class="row">
-                                                                             <p>Forme juridique</p>
-                                                                           </div>
-
-                                                                           <div class="row">
-                                                                             <p>Forme juridique	:    Entreprise individuelle 	  SARL     SA      GIE     Autre (préciser).. </p>
-                                                                           </div>
-
-                                                                           <div class="row">
-                                                                              <p>Siège social.............................................................................</p>
-                                                                           </div>
-                                                                           <div class="row">
-                                                                              <p>Portable............................. fixe................email ..................</p>
-                                                                           </div>
-                                                                           <div class="row">
-                                                                              <p>Email.............................................................................</p>
-                                                                           </div>
-                                                                      </div>
-                                                                </div>
-                                                           </div>
-                                                       </div>
-
-                                                       <div class="row">
-                                                         <div class="col-lg-6 col-sm-6 col-md-6">
-                                                               <div class="row">
-                                                                    <h6 class="col-lg-12 col-sm-12 col-md-12">DEMANDE DE CREDIT</h6>
-                                                               </div>
-                                                               <div class="row">
-                                                                    <div class="col-lg-12 col-sm-12 col-md-12  bordure">
-                                                                          <div class="row">
-                                                                            <p>ÿ  Fonds de roulement</p>
-                                                                          </div>
-
-                                                                          <div class="row">
-                                                                            <p>ÿ Investissement </p>
-                                                                          </div>
-
-                                                                          <div class="row">
-                                                                             <p>ÿ Spot</p>
-                                                                          </div>
-                                                                          <div class="row">
-                                                                             <p>ÿ  Avance sur marché/avance sur facture/avance sur bon de command</p>
-                                                                          </div>
-                                                                          <div class="row">
-                                                                             <p>ÿ  Autres</p>
-                                                                          </div>
-                                                                    </div>
-
-                                                               </div>
-                                                         </div>
-                                                         <div class="col-lg-6 col-sm-6 col-md-6 " >
-                                                             <div class="row">
-                                                               <h6 class="col-lg-12 col-sm-12 col-md-12">TYPE DE CREDIT	</h6>
-                                                             </div>
-                                                             <div class="row ">
-                                                               <div class="col-lg-12 col-sm-12 col-md-12 bordure typeCredit">
-                                                                 <div class="row">
-                                                                   <p>Montant Demandé.................................FCFA</p>
-                                                                 </div>
-
-                                                                 <div class="row">
-                                                                   <p>Durée demandée.................................MOIS </p>
-                                                                 </div>
-                                                               </div>
-                                                             </div>
-                                                         </div>
-                                                       </div>
-                                                       <div class="row">
-                                                             <div class="col-lg-12 col-sm-12 col-md-12">
-                                                                  <div class="row">
-                                                                      <h5 class="col-lg-12 col-sm-12 col-md-12">DETAILS SUR LA DEMANDE DE CREDIT</h5>
-                                                                  </div>
-                                                                  <div class="row bordure demande">
-                                                                    A l’attention de Monsieur le Directeur Général de .......................................................................
-       Monsieur,
-       Je viens par la présente solliciter un crédit  auprès de votre institution.
-       Ce prêt d’un montant de ..........................................................................................FCFA remboursable  sur une durée
-       de..........................mois, me permettra de...........................................................................................................................
-       ..............................................................................................................................................................................................................
-       ..............................................................................................................................................................................................................
-       En espérant recevoir une suite favorable à ma demande, je vous prie d’agréer Monsieur le Directeur Général mes
-       salutations les meilleures.
-                                                                  </div>
-                                                             </div>
-                                                       </div>
-                                                   </td>
-                                                </tr>
-
-                                             </tbody>
-                                             <tfoot>
-
-                                             </tfoot>
-                                        </table>
-
-                                       <table class="table table-bordered">
+                               <th>
+                                 <div class="dropdown">
+                                   <button type="button" class="btn btn-danger btn-sm dropdown-toggle dropdown-toggle-split" (click)="sorted($event)" id="nom">Nom</button>
+                                 </div>
+                               </th>
+                               <th>
+                                 <div class="dropdown">
+                                   <button type="button" class="btn btn-danger btn-sm dropdown-toggle dropdown-toggle-split" (click)="sorted($event)" id="telephone">Téléphone</button>
+                                 </div>
+                               </th>
+                               <th>
+                                 <div class="dropdown">
+                                   <button type="button" class="btn btn-danger btn-sm dropdown-toggle dropdown-toggle-split" (click)="sorted($event)" id="adresse">Adresse</button>
+                                 </div>
+                               </th>
+                               <th>
+                                 <div class="">
+                                   <button type="button" class="btn btn-danger btn-sm"  id="details">Détails</button>
+                                 </div>
+                               </th>
+                               <th>
+                                 <div class="dropdown">
+                                   <button type="button" class="btn btn-danger btn-sm dropdown-toggle dropdown-toggle-split" (click)="sorted($event)" id="charge">chargé de clientèle</button>
+                                 </div>
+                               </th>
+                           </tr>
+                       </thead>
+                       <tbody>
+                           <tr *ngFor="let client of this.clients | filterBy: ['num', 'nom','prenom','adresse','telephone','charge']: motif | orderBy: motif1  ">
+                               <th scope="row">{{ client.num }}</th>
+                               <td>{{ client.prenom }}</td>
+                               <td>{{ client.nom }}</td>
+                               <td>{{ client.telephone }}</td>
+                               <td>{{ client.adresse }}</td>
+                               <td>
+                                     <button type="button" class="btn btn-info btn-sm" (click)="openModal(templateDetails);">details</button>
+ 
+                                    <ng-template #templateDetails >
+                                      <div class="modal-header">
+                                          <button type="button" class="close pull-right"
+                                                aria-label="Close" (click)="modalRef.hide()"><span aria-hidden="true">&times;</span>
+                                          </button>
+                                      </div>
+                                         <div class="modal-body" id="print_div" #print_div>
+                                            <table class="table table-bordered">
                                                 <thead>
                                                     <tr>
                                                        <th class="imgTh">
@@ -215,68 +82,209 @@
                                                        </th>
                                                        <th class="formTitle"><p>FORMULAIRE DEMANDE DE PRÊT PERSONNE MORALE.</p></th>
                                                        <th class="formE">
-                                                            <tr><td colspan="2">E01009V01</td></tr>
+                                                            <tr><td colspan="2" >E01009V01</td></tr>
                                                             <tr>
                                                                  <td>Date d’application</td>
                                                                  <td>Page :2  /  2</td>
                                                             </tr>
                                                        </th>
                                                     </tr>
-
-                                               </thead>
+ 
+                                                </thead>
                                               <tbody>
-                                                <tr>
-
-                                                </tr>
-                                                <tr>
-                                                   <td colspan="3"><b>CADRE RESERVE	: FICHE D’IMPUTATION</b></td>
-                                                </tr>
-                                                <tr class="bordure">
-                                                 <td colspan="3">
-                                                  <div class="formEditabal">
-                                                       <form>
-                                                            <div class="form-group row">
-                                                                  <label for="example-search-input" class="col-lg-3 col-sm-3 col-md-3 col-form-label">Agence</label>
+                                                 <tr>
+                                                   <td colspan="3">
+                                                        <div class="row">
+                                                            <div class="col-lg-12 col-sm-12 col-md-12">
+                                                                 <div class="row">
+                                                                     <h5 class="col-lg-12 col-sm-12 col-md-12">INFORMATIONS SUR LE DEMANDEUR</h5>
+                                                                 </div>
+                                                                 <div class="row bordure">
+                                                                       <div class="col-lg-12 col-sm-12 col-md-12">
+                                                                             <div class="row">
+                                                                                  <p>  Intitulé du compte ........... {{client.intitule}}</p>
+                                                                             </div>
+ 
+                                                                            <div class="row">
+                                                                                <p>Numéro du compte	..............{{client.numero}}</p>
+                                                                            </div>
+ 
+                                                                            <div class="row">
+                                                                              <p>Nom/Prénom du signataire...........{{client.prenom }} {{client.nom}}</p>
+                                                                            </div>
+ 
+                                                                            <div class="row">
+                                                                              <p>Forme juridique...............{{client.juridique}}</p>
+                                                                            </div>
+ 
+                                                                            <div class="row">
+                                                                              <p>Forme juridique	:    Entreprise individuelle 	  SARL     SA      GIE     Autre (préciser).. </p>
+                                                                            </div>
+ 
+                                                                            <div class="row">
+                                                                               <p>Siège social............................{{client.siege}}</p>
+                                                                            </div>
+                                                                            <div class="row">
+                                                                               <p>Portable............{{client.portable}}.... fixe...........{{client.fixe}}.... email ..............{{client.email}}</p>
+                                                                            </div>
+                                                                            <div class="row">
+                                                                               <p>Email.....................................{{client.eamil}}</p>
+                                                                            </div>
+                                                                       </div>
+                                                                 </div>
+                                                            </div>
+                                                        </div>
+ 
+                                                        <div class="row">
+                                                          <div class="col-lg-6 col-sm-6 col-md-6">
+                                                                <div class="row">
+                                                                     <h6 class="col-lg-12 col-sm-12 col-md-12">DEMANDE DE CREDIT</h6>
+                                                                </div>
+                                                                <div class="row">
+                                                                     <div class="col-lg-12 col-sm-12 col-md-12  bordure">
+                                                                           <div class="row">
+                                                                             <p>ÿ  Fonds de roulement</p>
+                                                                           </div>
+ 
+                                                                           <div class="row">
+                                                                             <p>ÿ Investissement </p>
+                                                                           </div>
+ 
+                                                                           <div class="row">
+                                                                              <p>ÿ Spot</p>
+                                                                           </div>
+                                                                           <div class="row">
+                                                                              <p>ÿ  Avance sur marché/avance sur facture/avance sur bon de command</p>
+                                                                           </div>
+                                                                           <div class="row">
+                                                                              <p>ÿ  Autres</p>
+                                                                           </div>
+                                                                     </div>
+ 
+                                                                </div>
+                                                          </div>
+                                                          <div class="col-lg-6 col-sm-6 col-md-6 " >
+                                                              <div class="row">
+                                                                <h6 class="col-lg-12 col-sm-12 col-md-12">TYPE DE CREDIT	</h6>
+                                                              </div>
+                                                              <div class="row ">
+                                                                <div class="col-lg-12 col-sm-12 col-md-12 bordure typeCredit">
+                                                                  <div class="row">
+                                                                    <p>Montant Demandé..................{{client.montantCredit}}FCFA</p>
+                                                                  </div>
+ 
+                                                                  <div class="row">
+                                                                    <p>Durée demandée................{{client.DureeDemande}}....MOIS </p>
+                                                                  </div>
+                                                                </div>
+                                                              </div>
+                                                          </div>
+                                                        </div>
+                                                        <div class="row">
+                                                              <div class="col-lg-12 col-sm-12 col-md-12">
+                                                                   <div class="row">
+                                                                       <h5 class="col-lg-12 col-sm-12 col-md-12">DETAILS SUR LA DEMANDE DE CREDIT</h5>
+                                                                   </div>
+                                                                   <div class="row bordure demande">  {{client.detailsDemande}}
+                                                                    
+                                                                   </div>
+                                                              </div>
+                                                        </div>
+                                                    </td>
+                                                 </tr>
+ 
+                                              </tbody>
+                                              <tfoot>
+ 
+                                              </tfoot>
+                                         </table>
+ 
+                                        <table class="table table-bordered">
+                                                 <thead>
+                                                     <tr>
+                                                        <th class="imgTh">
+                                                           <img src="../../assets/logo.png" alt="">
+                                                        </th>
+                                                        <th class="formTitle"><p>FORMULAIRE DEMANDE DE PRÊT PERSONNE MORALE.</p></th>
+                                                        <th class="formE">
+                                                             <tr><td colspan="2">E01009V01</td></tr>
+                                                             <tr>
+                                                                  <td>Date d’application</td>
+                                                                  <td>Page :2  /  2</td>
+                                                             </tr>
+                                                        </th>
+                                                     </tr>
+ 
+                                                </thead>
+                                               <tbody>
+                                                 <tr>
+ 
+                                                 </tr>
+                                                 <tr>
+                                                    <td colspan="3"><b>CADRE RESERVE	: FICHE D’IMPUTATION</b></td>
+                                                 </tr>
+                                                 <tr class="bordure">
+                                                  <td colspan="3">
+                                                   <div class="formEditabal">
+                                                        <form>
+                                                             <div class="form-group row">
+                                                                   <label for="example-search-input" class="col-lg-3 col-sm-3 col-md-3 col-form-label">Agence</label>
+                                                                   <div class="col-lg-9 col-sm-9 col-md-9 input-group input-group-sm">
+                                                                     <input class="form-control form-control-sm" type="text" placeholder="">
+                                                                   </div>
+                                                              </div>
+                                                              <div class="form-group row">
+                                                                  <label for="example-search-input" class="col-lg-3 col-sm-3 col-md-3 col-form-label">Date de réception de la demande</label>
                                                                   <div class="col-lg-9 col-sm-9 col-md-9 input-group input-group-sm">
                                                                     <input class="form-control form-control-sm" type="text" placeholder="">
                                                                   </div>
                                                              </div>
                                                              <div class="form-group row">
-                                                                 <label for="example-search-input" class="col-lg-3 col-sm-3 col-md-3 col-form-label">Date de réception de la demande</label>
+                                                                 <label for="example-search-input" class="col-lg-3 col-sm-3 col-md-3 col-form-label">Demande reçue par</label>
                                                                  <div class="col-lg-9 col-sm-9 col-md-9 input-group input-group-sm">
                                                                    <input class="form-control form-control-sm" type="text" placeholder="">
                                                                  </div>
                                                             </div>
                                                             <div class="form-group row">
-                                                                <label for="example-search-input" class="col-lg-3 col-sm-3 col-md-3 col-form-label">Demande reçue par</label>
-                                                                <div class="col-lg-9 col-sm-9 col-md-9 input-group input-group-sm">
-                                                                  <input class="form-control form-control-sm" type="text" placeholder="">
-                                                                </div>
-                                                           </div>
-                                                           <div class="form-group row">
-                                                              <div class="col-lg-5 col-sm-5 col-md-5">
+                                                               <div class="col-lg-5 col-sm-5 col-md-5">
+                                                                 <div class="form-group row">
+                                                                   <label for="example-search-input" class="col-lg-6 col-sm-6 col-md-6 col-form-label">Imputation faite le</label>
+                                                                   <div class="col-lg-6 col-sm-6 col-md-6 input-group input-group-sm">
+                                                                     <input class="form-control form-control-sm" type="text" placeholder="">
+                                                                   </div>
+                                                                 </div>
+                                                              </div>
+                                                              <div class="col-lg-7 col-sm-7 col-md-7">
                                                                 <div class="form-group row">
-                                                                  <label for="example-search-input" class="col-lg-6 col-sm-6 col-md-6 col-form-label">Imputation faite le</label>
-                                                                  <div class="col-lg-6 col-sm-6 col-md-6 input-group input-group-sm">
-                                                                    <input class="form-control form-control-sm" type="text" placeholder="">
-                                                                  </div>
+                                                                   <label for="example-search-input" class="col-lg-1 col-sm-1 col-md-1 col-form-label">par</label>
+                                                                   <div class="col-lg-11 col-sm-11 col-md-11 input-group input-group-sm">
+                                                                     <input class="form-control form-control-sm" type="text" placeholder="">
+                                                                   </div>
                                                                 </div>
                                                              </div>
-                                                             <div class="col-lg-7 col-sm-7 col-md-7">
-                                                               <div class="form-group row">
-                                                                  <label for="example-search-input" class="col-lg-1 col-sm-1 col-md-1 col-form-label">par</label>
-                                                                  <div class="col-lg-11 col-sm-11 col-md-11 input-group input-group-sm">
-                                                                    <input class="form-control form-control-sm" type="text" placeholder="">
-                                                                  </div>
-                                                               </div>
-                                                            </div>
-                                                          </div>
-                                                          <div class="form-group row">
-                                                              <label for="example-search-input" class="col-lg-12 col-sm-12 col-md-12 col-form-label">Eléments reçus du client lors de la demande</label>
-
+                                                           </div>
+                                                           <div class="form-group row">
+                                                               <label for="example-search-input" class="col-lg-12 col-sm-12 col-md-12 col-form-label">Eléments reçus du client lors de la demande</label>
+ 
+                                                                      <div class="form-group col-lg-12 col-sm-12 col-md-12">
+                                                                        <div class="row">
+                                                                          <label for="example-search-input" class="col-lg-1 col-sm-1 col-md-1 col-form-label">1-)</label>
+                                                                          <div class="col-lg-11 col-sm-11 col-md-11 input-group input-group-sm">
+                                                                            <input class="form-control form-control-sm" type="text" placeholder="">
+                                                                          </div>
+                                                                        </div>
+                                                                     </div>
                                                                      <div class="form-group col-lg-12 col-sm-12 col-md-12">
                                                                        <div class="row">
-                                                                         <label for="example-search-input" class="col-lg-1 col-sm-1 col-md-1 col-form-label">1-)</label>
+                                                                         <label for="example-search-input" class="col-lg-1 col-sm-1 col-md-1 col-form-label">2-)</label>
+                                                                         <div class="col-lg-11 col-sm-11 col-md-11 input-group input-group-sm">
+                                                                           <input class="form-control form-control-sm" type="text" placeholder="">
+                                                                         </div>
+                                                                       </div>
+                                                                     </div>
+                                                                     <div class="form-group col-lg-12 col-sm-12 col-md-12">
+                                                                       <div class="row">
+                                                                         <label for="example-search-input" class="col-lg-1 col-sm-1 col-md-1 col-form-label">3-)</label>
                                                                          <div class="col-lg-11 col-sm-11 col-md-11 input-group input-group-sm">
                                                                            <input class="form-control form-control-sm" type="text" placeholder="">
                                                                          </div>
@@ -284,131 +292,217 @@
                                                                     </div>
                                                                     <div class="form-group col-lg-12 col-sm-12 col-md-12">
                                                                       <div class="row">
-                                                                        <label for="example-search-input" class="col-lg-1 col-sm-1 col-md-1 col-form-label">2-)</label>
+                                                                        <label for="example-search-input" class="col-lg-1 col-sm-1 col-md-1 col-form-label">4-)</label>
                                                                         <div class="col-lg-11 col-sm-11 col-md-11 input-group input-group-sm">
                                                                           <input class="form-control form-control-sm" type="text" placeholder="">
                                                                         </div>
                                                                       </div>
                                                                     </div>
-                                                                    <div class="form-group col-lg-12 col-sm-12 col-md-12">
-                                                                      <div class="row">
-                                                                        <label for="example-search-input" class="col-lg-1 col-sm-1 col-md-1 col-form-label">3-)</label>
-                                                                        <div class="col-lg-11 col-sm-11 col-md-11 input-group input-group-sm">
-                                                                          <input class="form-control form-control-sm" type="text" placeholder="">
-                                                                        </div>
-                                                                      </div>
-                                                                   </div>
                                                                    <div class="form-group col-lg-12 col-sm-12 col-md-12">
                                                                      <div class="row">
-                                                                       <label for="example-search-input" class="col-lg-1 col-sm-1 col-md-1 col-form-label">4-)</label>
+                                                                       <label for="example-search-input" class="col-lg-1 col-sm-1 col-md-1 col-form-label">5-)</label>
                                                                        <div class="col-lg-11 col-sm-11 col-md-11 input-group input-group-sm">
                                                                          <input class="form-control form-control-sm" type="text" placeholder="">
                                                                        </div>
                                                                      </div>
                                                                    </div>
-                                                                  <div class="form-group col-lg-12 col-sm-12 col-md-12">
-                                                                    <div class="row">
-                                                                      <label for="example-search-input" class="col-lg-1 col-sm-1 col-md-1 col-form-label">5-)</label>
-                                                                      <div class="col-lg-11 col-sm-11 col-md-11 input-group input-group-sm">
-                                                                        <input class="form-control form-control-sm" type="text" placeholder="">
-                                                                      </div>
-                                                                    </div>
-                                                                  </div>
-
+ 
+                                                           </div>
+                                                           <div class="form-group row">
+                                                               <div class="form-check col-lg-6 col-sm-6 col-md-6">
+                                                                 <label class="form-check-label">
+                                                                   <input class="form-check-input" type="checkbox" value="">
+                                                                   dossier complet
+                                                                 </label>
+                                                               </div>
+                                                               <div class="form-check col-lg-6 col-sm-6 col-md-6">
+                                                                 <label class="form-check-label">
+                                                                   <input class="form-check-input" type="checkbox" value="">
+                                                                   dossier  à compléter
+                                                                 </label>
+                                                               </div>
                                                           </div>
-                                                          <div class="form-group row">
-                                                              <div class="form-check col-lg-6 col-sm-6 col-md-6">
-                                                                <label class="form-check-label">
-                                                                  <input class="form-check-input" type="checkbox" value="">
-                                                                  dossier complet
-                                                                </label>
+                                                     </form>
+                                                   </div>
+                                                   </td>
+                                                 </tr>
+                                                 <tr>
+                                                     <td colspan="3">
+                                                       <div class="row bareme">
+                                                            <div class="col-lg-2 col-sm-2 col-md-2">
+ 
+                                                            </div>
+                                                            <div class="col-lg-10 col-sm-10 col-md-10">
+                                                              <div class="row">
+                                                                   <div class="col-lg-12 col-sm-12 col-md-12">
+                                                                        <p><b>BAREME FRAIS DE DEMANDE DE CREDIT </b></p>
+                                                                   </div>
                                                               </div>
-                                                              <div class="form-check col-lg-6 col-sm-6 col-md-6">
-                                                                <label class="form-check-label">
-                                                                  <input class="form-check-input" type="checkbox" value="">
-                                                                  dossier  à compléter
-                                                                </label>
+                                                              <div class="row">
+                                                                   <table class="col-lg-10 col-sm-10 col-md-10">
+                                                                          <thead>
+                                                                               <th>Montant de la Demande (en Fcfa)	</th>
+                                                                               <th>Montant frais</th>
+                                                                          </thead>
+                                                                          <tbody>
+                                                                               <tr>
+                                                                                   <td>De 100 000	 à 500 000 </td>
+                                                                                   <td>1 000 Fcfa</td>
+                                                                               </tr>
+                                                                               <tr>
+                                                                                   <td>De 500 001	 à 1 000 000 </td>
+                                                                                   <td>2 000 Fcfa</td>
+                                                                               </tr>
+                                                                               <tr>
+                                                                                   <td>De 1 000 001	 à 5 000 000 </td>
+                                                                                   <td>3 000 Fcfa</td>
+                                                                               </tr>
+                                                                               <tr>
+                                                                                   <td>De 5 000 001	 à 25 000 000</td>
+                                                                                   <td>5 000 Fcfa</td>
+                                                                               </tr>
+                                                                               <tr>
+                                                                                   <td>De 25 000 001	 à 50 000 000</td>
+                                                                                   <td>10 000 Fcfa</td>
+                                                                               </tr>
+                                                                               <tr>
+                                                                                   <td>A partir de 50 000 000 </td>
+                                                                                   <td>15 000 Fcfa</td>
+                                                                               </tr>
+                                                                          </tbody>
+                                                                   </table>
                                                               </div>
-                                                         </div>
-                                                    </form>
-                                                  </div>
-                                                  </td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="3">
-                                                      <div class="row bareme">
-                                                           <div class="col-lg-2 col-sm-2 col-md-2">
+                                                              <div class="row">
+                                                                 <div class="col-lg-10 col-sm-10 col-md-10">
+                                                                      NB : je reconnais avoir pris connaissance des frais de demande de crédit, que j’accepte et qui sont non remboursables.
+                                                                 </div>
+ 
+                                                              </div>
+                                                            </div>
+                                                       </div>
+                                                     </td>
+                                                 </tr>
+                                               </tbody>
+                                          </table>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <div>
+                                                <essence-ng2-print
+                                                        [mode]="'popup'"
+                                                        [popTitle]="'Bienvenu dans la page d\'impression '"
+                                                        [btnText]="'Imprimer'"
+                                                        [btnClass]="{'btn': true, 'btn-warning': true}"
+                                                        [printHTML]="print_div"
+                                                        [printStyle]="printStyle"
+                                                        [printCSS]="printCSS"
+                                                        (printComplete)="printComplete()">
+                                                </essence-ng2-print>
+                                            </div>
+                                            <button type="button" class="close pull-right"
+                                                  aria-label="Close" (click)="modalRef.hide()"><span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                    </ng-template>
+                                    <!-- Documents Vews -->
+                                    <button type="button" class="btn btn-info btn-sm" (click)="openModal(templateDocs);">Docs</button>
+ 
+                                    <ng-template #templateDocs >
+                                      <div class="modal-header">
+                                          <button type="button" class="close pull-right"
+                                                aria-label="Close" (click)="modalRef.hide()"><span aria-hidden="true">&times;</span>
+                                          </button>
+                                      </div>
+                                         <div class="modal-body">
+                                            <!-- <div ></div> -->
+                                               <div class="col-lg-12 col-md-12 col-sm-12 docs">
+                                                    <div class="row doc">
+                                                       <div class="col-lg-10 col-md-10 col-sm-10 titre">
+                                                           Contrat de location.
+                                                       </div>
+                                                       <div class="file">
+                                                              <button type="button" class="btn btn-default btn-sm">
+                                                                <span class="glyphicon glyphicon-file"></span> Fichier
+                                                              </button>
+                                                       </div>
+                                                    </div>
+                                                    <div class="row doc">
+                                                        <div class="col-lg-10 col-md-10 col-sm-10 titre">
+                                                            Relevés wari, jony jony et autres produits pour les 06 derniers mois.
+                                                        </div>
+                                                        <div class="file">
+                                                               <button type="button" class="btn btn-default btn-sm">
+                                                                 <span class="glyphicon glyphicon-file"></span> Fichier
+                                                               </button>
+                                                        </div>
+                                                     </div>
+                                                     <div class="row doc">
+                                                        <div class="col-lg-10 col-md-10 col-sm-10 titre">
+                                                            Relevé de compte pour les 06 derniers mois.
+                                                        </div>
+                                                        <div class="file">
+                                                               <button type="button" class="btn btn-default btn-sm">
+                                                                 <span class="glyphicon glyphicon-file"></span> Fichier
+                                                               </button>
+                                                        </div>
+                                                     </div>
+                                                     <div class="row doc">
+                                                        <div class="col-lg-10 col-md-10 col-sm-10 titre">
+                                                            Caution morale justifiant d’une activité génératrice de revenus.
+                                                        </div>
+                                                        <div class="file">
+                                                               <button type="button" class="btn btn-default btn-sm">
+                                                                 <span class="glyphicon glyphicon-file"></span> Fichier
+                                                               </button>
+                                                        </div>
+                                                     </div>
+                                                     <div class="row doc">
+                                                        <div class="col-lg-10 col-md-10 col-sm-10 titre">
+                                                            De la copie de sa Carte Nationale d’Identité.
+                                                        </div>
+                                                        <div class="file">
+                                                               <button type="button" class="btn btn-default btn-sm">
+                                                                 <span class="glyphicon glyphicon-file"></span> Fichier
+                                                               </button>
+                                                        </div>
+                                                     </div>
+                                                     <div class="row doc">
+                                                        <div class="col-lg-10 col-md-10 col-sm-10 titre">
+                                                            De son certificat de domicile.
+                                                        </div>
+                                                        <div class="file">
+                                                               <button type="button" class="btn btn-default btn-sm">
+                                                                 <span class="glyphicon glyphicon-file"></span> Fichier
+                                                               </button>
+                                                        </div>
+                                                     </div>
+                                                     <div class="row doc">
+                                                        <div class="col-lg-10 col-md-10 col-sm-10 titre">
+                                                            D’un justificatif d’activité : Bulletins de salaire pour les salariés, factures ou relevé de compte pour les commerçants.
+                                                        </div>
+                                                        <div class="file">
+                                                               <button type="button" class="btn btn-default btn-sm">
+                                                                 <span class="glyphicon glyphicon-file"></span> Fichier
+                                                               </button>
+                                                        </div>
+                                                     </div>
+                                               </div>
+                                        </div>
+                                        <div class="modal-footer">
 
-                                                           </div>
-                                                           <div class="col-lg-10 col-sm-10 col-md-10">
-                                                             <div class="row">
-                                                                  <div class="col-lg-12 col-sm-12 col-md-12">
-                                                                       <p><b>BAREME FRAIS DE DEMANDE DE CREDIT </b></p>
-                                                                  </div>
-                                                             </div>
-                                                             <div class="row">
-                                                                  <table class="col-lg-10 col-sm-10 col-md-10">
-                                                                         <thead>
-                                                                              <th>Montant de la Demande (en Fcfa)	</th>
-                                                                              <th>Montant frais</th>
-                                                                         </thead>
-                                                                         <tbody>
-                                                                              <tr>
-                                                                                  <td>De 100 000	 à 500 000 </td>
-                                                                                  <td>1 000 Fcfa</td>
-                                                                              </tr>
-                                                                              <tr>
-                                                                                  <td>De 500 001	 à 1 000 000 </td>
-                                                                                  <td>2 000 Fcfa</td>
-                                                                              </tr>
-                                                                              <tr>
-                                                                                  <td>De 1 000 001	 à 5 000 000 </td>
-                                                                                  <td>3 000 Fcfa</td>
-                                                                              </tr>
-                                                                              <tr>
-                                                                                  <td>De 5 000 001	 à 25 000 000</td>
-                                                                                  <td>5 000 Fcfa</td>
-                                                                              </tr>
-                                                                              <tr>
-                                                                                  <td>De 25 000 001	 à 50 000 000</td>
-                                                                                  <td>10 000 Fcfa</td>
-                                                                              </tr>
-                                                                              <tr>
-                                                                                  <td>A partir de 50 000 000 </td>
-                                                                                  <td>15 000 Fcfa</td>
-                                                                              </tr>
-                                                                         </tbody>
-                                                                  </table>
-                                                             </div>
-                                                             <div class="row">
-                                                                <div class="col-lg-10 col-sm-10 col-md-10">
-                                                                     NB : je reconnais avoir pris connaissance des frais de demande de crédit, que j’accepte et qui sont non remboursables.
-                                                                </div>
-
-                                                             </div>
-                                                           </div>
-                                                      </div>
-                                                    </td>
-                                                </tr>
-                                              </tbody>
-                                         </table>
-                                       </div>
-                                       <div class="modal-footer">
-                                           <button type="button" class="btn btn-info btn-sm imprimer" (click)="window.print()" >Imprimer</button>
-                                           <button type="button" class="close pull-right"
-                                                 aria-label="Close" (click)="modalRef.hide()"><span aria-hidden="true">&times;</span>
-                                           </button>
-                                       </div>
-                                   </ng-template>
-                              </td>
-                              <td>{{ client.charge }}</td>
-                          </tr>
-
-                      </tbody>
-                  </table>
-                </div>
-            </div>
-         </div>
-   </div>
-</div>
- <app-details [details]="detailsClient" *ngIf="detailsClient" (fermerModalEvent)="fermerModal($event)"></app-details>
+                                            <button type="button" class="close pull-right"
+                                                  aria-label="Close" (click)="modalRef.hide()"><span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                      </ng-template>
+                               </td>
+                               <td>{{ client.charge }}</td>
+                           </tr>
+ 
+                       </tbody>
+                   </table>
+                 </div>
+             </div>
+          </div>
+    </div>
+ </div>
+  <app-details [details]="detailsClient" *ngIf="detailsClient" (fermerModalEvent)="fermerModal($event)"></app-details>

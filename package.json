@@ -25,6 +25,7 @@
     "bootstrap": "^4.0.0-beta.3",
     "bootstrap-select": "^1.12.4",
     "core-js": "^2.4.1",
+    "essence-ng2-print": "^1.1.0",
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
     "ngx-bootstrap": "^2.0.0-rc.0",
